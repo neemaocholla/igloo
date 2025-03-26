@@ -1,0 +1,2 @@
+# igloo
+JS arrays practice
