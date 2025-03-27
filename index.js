@@ -19,20 +19,36 @@ console.log(arr3);
 // let arr = ["boy", "man", "girl",  "school", "girl", "woman"];
 
 let arr = ["boy", "man", "girl",  "school", "girl", "woman"];
-let soleArr = [...newSet(arr)];
-let duplicates = arr.filter((item,index) => arr.indexOf(item) !== index)
-console.log("Array without duplicates",soleArr)
-console.log("Duplicates",[...newSet(duplicates)])
+let uniqueSet = new Set
+let duplicates =[]
+arr.forEach(item => {
+    if (uniqueSet.has(item)){
+        duplicates.push(item);
+    }else{
+        uniqueSet.add(item);
+    }
+})
+let uniqueArray = Array.from(uniqueSet);
+
+console.log("Array without duplicates:",uniqueArray);
+console.log("Duplicates array:", duplicates);
 
 
-// Write a JS script to search for the following word in the array."food"If the word is present, return it else return "the search word was not found". let arr5 = ["the", "way", "x", 4]
-let arr5 =["the","way","x",4]
- if  (arr5.includes("food"))
- console.log("food")
 
-// Write a JS script to sort the following string:let word = "renniw"
+ // Write a JS script to search for the following word in the array."food"If the word is present, return it else return "the search word was not found". let arr5 = ["the", "way", "x", 4]
+ let arr5 =["the","way","x",4];
+ let item = "food"
+ let result = arr5.includes(item) ? item : "the search word was not found";
+ console.log(result)
 
-let word = "renniw"
-let sortedWord = word.split("").sort().jpoin("")
-console.log(sortedWord)
+
+//Write a JS script to sort the following string:let word = "renniw"
+let word = "renniw";
+let sortWord = [...word].sort().join('');
+console.log(sortWord);
+
+
 // Using an array of fruits with length 10 , insert 'Tomato' at the 5th index
+let fruits = ['Mango','Strawberry','Peach','Watermelon','Banana','Guava','Grapefruit','Orange','Pawpaw','Grapes'];
+fruits.splice(5,0,'Tomato');
+console.log(fruits)
